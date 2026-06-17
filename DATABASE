@@ -15,11 +15,13 @@ CREATE TABLE vinculos (
     FOREIGN KEY (crianca_id) REFERENCES usuarios(id)
 );
 
-CREATE TABLE qr_codes (
+CREATE TABLE id_login (
     id INT AUTO_INCREMENT PRIMARY KEY,
     crianca_id INT NOT NULL,
-    codigo VARCHAR(255) UNIQUE NOT NULL,
-    data_geracao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    expiracao DATETIME,
     FOREIGN KEY (crianca_id) REFERENCES usuarios(id)
+);
+
+CREATE TABLE crianca (
+    id INT AUTO_INCREMET PRIMARY KEY,
+    FOREIGN KEY (responsavel_id) REFERENCES responsavel(id) 
 );
